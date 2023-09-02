@@ -204,6 +204,9 @@ class HashTableSeperateChaining<K, V> {
                 }
 
                 // 4. Hash Table Shrink
+                // Add a safety guard
+                // After deletion, return if the HT is empty. 
+                if (isEmpty()) return null;
                 // If the load factor <= 0.3, we half the hash table
                 float loadFactor = (float) currSize / (float) arrayCapacity;
                 if (loadFactor <= LOAD_THRESHOLD_S) {
