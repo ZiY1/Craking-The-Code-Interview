@@ -1,3 +1,9 @@
+// HashTable.java
+// Ziyi Huang
+// 08/29/2023
+// Hash Table with seperate chaining Test
+// Version 1.0
+
 import java.util.Scanner;
 
 public class HashTableSeperateChainingTest {
@@ -14,9 +20,6 @@ public class HashTableSeperateChainingTest {
             char ch;
             do
             // Menu is displayed
-            // LinearProbingHashTable operations performed as
-            // per keys Users enter 'y' to continue 'n' if
-            // entered by user , the program terminates
 
             {
                 // Menu

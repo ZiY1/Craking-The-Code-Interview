@@ -1,21 +1,19 @@
-// HashTable.java
+// MyArrayListTest.java
 // Ziyi Huang
-// 08/29/2023
-// Hash Table with linear probing Test
-// Version 1.0
+// 09/02/2023
+// ArrayList Test
+// Version 0.0
 
 import java.util.Scanner;
 
-public class HashTableOpenAddressingTest {
+public class MyArrayListTest {
     public static void main(String[] args) {
-        try (// Create a scanner obj to take input from user
-                Scanner scan = new Scanner(System.in)) {
-            // Display messages
-            System.out.println("Hash Table Open Addressing Test\n");
-            System.out.print("Enter Hash Table Size: ");
 
-            // Create Hash Table obj
-            HashTableOpenAddressing<String, String> hashTable = new HashTableOpenAddressing<>(scan.nextInt());
+        try (Scanner scan = new Scanner(System.in)) {
+            // Display messages
+            System.out.println("ArrayList Test\n");
+
+            MyArrayList<String> myArrayList = new MyArrayList<>();
 
             char ch;
             do
@@ -26,9 +24,12 @@ public class HashTableOpenAddressingTest {
                 // Display messages
                 System.out.println("\nHash Table Operations\n");
                 System.out.println("1. insert ");
-                System.out.println("2. delete");
-                System.out.println("3. search");
-                System.out.println("4. clear");
+                System.out.println("2. insert at index");
+                System.out.println("3. set at index");
+                System.out.println("4. search");
+                System.out.println("5. contains");
+                System.out.println("6. remove");
+                System.out.println("7. clear");
 
                 // Display message
                 System.out.println("\nEnter operation number:");
@@ -42,8 +43,8 @@ public class HashTableOpenAddressingTest {
                     case 1:
 
                         // Display message
-                        System.out.println("Enter key and value:");
-                        hashTable.insert((String) scan.next(), (String) scan.next());
+                        System.out.println("Enter element:");
+                        myArrayList.add((String) scan.next());
                         // Break statement to terminate a case
                         break;
 
@@ -51,27 +52,51 @@ public class HashTableOpenAddressingTest {
                     case 2:
 
                         // Display message
-                        System.out.println("Enter key:");
-                        hashTable.delete(scan.next());
+                        System.out.println("Enter index and element:");
+                        myArrayList.add(scan.nextInt(), scan.next());
                         // Break statement to terminate a case
                         break;
 
                     // Case 3
                     case 3:
 
-                        // Print statements
-                        System.out.println("Enter key:");
-                        System.out.println("Value = "
-                                + hashTable.search(scan.next()));
+                        // Display message
+                        System.out.println("Enter index and element:");
+                        myArrayList.set(scan.nextInt(), scan.next());
                         // Break statement to terminate a case
                         break;
 
                     // Case 4
                     case 4:
 
-                        hashTable.makeEmpty();
-                        // Print statement
-                        System.out.println("Hash Table Cleared\n");
+                        // Display message
+                        System.out.println("Enter index:");
+                        System.out.println("Element = " + myArrayList.get(scan.nextInt()));
+                        // Break statement to terminate a case
+                        break;
+
+                    // Case 5
+                    case 5:
+
+                        // Display message
+                        System.out.println("Enter element:");
+                        System.out.println(myArrayList.contains(scan.next()));
+                        // Break statement to terminate a case
+                        break;
+
+                    // Case 6
+                    case 6:
+
+                        // Display message
+                        System.out.println("Enter element:");
+                        myArrayList.remove(scan.next());
+                        // Break statement to terminate a case
+                        break;
+
+                    // Case 7
+                    case 7:
+
+                        myArrayList.clear();
                         // Break statement to terminate a case
                         break;
 
@@ -86,7 +111,7 @@ public class HashTableOpenAddressingTest {
                 }
 
                 // Display hash table
-                hashTable.printMyHashTable();
+                myArrayList.printArrayList();
 
                 // Display message asking the user whether
                 // he/she wants to continue
@@ -99,4 +124,5 @@ public class HashTableOpenAddressingTest {
             } while (ch == 'Y' || ch == 'y');
         }
     }
+
 }
